@@ -1,33 +1,21 @@
-// select dom elements
-const counterEl = document.getElementById("counter");
-const incrementEl = document.getElementById("increment");
-const decrementEl = document.getElementById("decrement");
+//TODO: SELECT THE DOM ELEMENT
 
-const counter2El = document.getElementById("counter2");
-const increment2El = document.getElementById("increment2");
-const decrement2El = document.getElementById("decrement2");
+const counterElement =document.getElementById('counter');
+const incrementElement =document.getElementById('increment');
+const decrementElement =document.getElementById('decrement');
 
-// initial state
-let count = 0;
-let count2 = 0;
 
-// event listeners
-incrementEl.addEventListener("click", () => {
-    count++;
-    counterEl.innerText = count;
-});
+//TODO: SET THE INITIAL STATE
 
-decrementEl.addEventListener("click", () => {
-    count--;
-    counterEl.innerText = count;
-});
+let count =0;
 
-increment2El.addEventListener("click", () => {
-    count2++;
-    counter2El.innerText = count2;
-});
+//TODO: ADD EVENT LISTENERS
 
-decrement2El.addEventListener("click", () => {
-    count2--;
-    counter2El.innerText = count2;
-});
+incrementElement.addEventListener("click",()=>{
+    count =count+1;
+    counterElement.innerText=count;
+})
+decrementElement.addEventListener("click",()=>{
+    count =count-1;
+    counterElement.innerText=count;
+})
