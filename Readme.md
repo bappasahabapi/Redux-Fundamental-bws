@@ -51,7 +51,7 @@ store.subscribe(render)
 //TODO: 04.button click listener
 
 // select dom elements
-
+  
 const counterElement =document.getElementById('counter')
 const incrementElement =document.getElementById('increment')
 const decrementElement =document.getElementById('decrement')
