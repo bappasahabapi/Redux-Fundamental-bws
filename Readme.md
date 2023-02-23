@@ -1,11 +1,16 @@
 `Working with raw js` 
-01. Working with raw redux  we have to 
-
+A. Working with raw redux  we have to 
+    
     01. initial state
+
     02.create reducer
+
     03.create store
+
     04.button click listener
+
     05.Render in the ui
+    
 
 ```js
 
