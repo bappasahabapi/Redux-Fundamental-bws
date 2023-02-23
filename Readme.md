@@ -13,7 +13,6 @@ A. Working with raw redux  we have to
     
 
 ```js
-
 //TODO: 01.initial state
 
 const initialState ={
@@ -26,7 +25,9 @@ function counterReducer(state=initialState, action){
     if (action.type==='increment') {
         return{
             ...state,
-            value:state.value+1
+            value:state.value+action.payload
+            // value:state.value+action.value
+            // value:state.value+1
         };
     }else if(action.type==='decrement'){
         return{
@@ -56,7 +57,7 @@ store.subscribe(render)
 //TODO: 04.button click listener
 
 // select dom elements
-  
+
 const counterElement =document.getElementById('counter')
 const incrementElement =document.getElementById('increment')
 const decrementElement =document.getElementById('decrement')
@@ -64,11 +65,14 @@ const decrementElement =document.getElementById('decrement')
 incrementElement.addEventListener('click', ()=>{
     store.dispatch({
         type:'increment',
+        payload:10
+        // value:10
     })
 })
 decrementElement .addEventListener('click', ()=>{
     store.dispatch({
         type:'decrement',
+        payload:10
     })
 })
 
