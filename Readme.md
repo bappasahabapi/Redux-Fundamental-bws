@@ -10,7 +10,7 @@ A. Working with raw redux  we have to
     03. Action Identifiers:
 
     04.create reducer
-g
+
     05.create store
 
     06.button click listener
