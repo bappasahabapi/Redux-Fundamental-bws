@@ -1,27 +1,71 @@
 `Working with raw js`
-01. Working with raw js we have to 
+01. Working with raw redux  we have to 
 
-    --> Change the **state** as well as **show the change in the ui**
+    01. initial state
+    02.create reducer
+    03.create store
+    04.button click listener
+    05.Render in the ui
 
 ```js
-//TODO: SELECT THE DOM ELEMENT
 
-const counterElement = document.getElementById("counter");
-const incrementElement = document.getElementById("increment");
-const decrementElement = document.getElementById("decrement");
+//TODO: 01.initial state
 
-//TODO: SET THE INITIAL STATE
+const initialState ={
+    value:0,
+}
 
-let count = 0;
+//TODO: 02.create reducer
 
-//TODO: ADD EVENT LISTENERS
+function counterReducer(state=initialState, action){
+    if (action.type==='increment') {
+        return{
+            ...state,
+            value:state.value+1
+        };
+    }else if(action.type==='decrement'){
+        return{
+            ...state,
+            value:state.value-1
+        };
+    } else{
+        return state;
+    }
+}
 
-incrementElement.addEventListener("click", () => {
-  count = count + 1;
-  counterElement.innerText = count;
-});
-decrementElement.addEventListener("click", () => {
-  count = count - 1;
-  counterElement.innerText = count;
-});
+//TODO: 03.create store
+
+const store =Redux.createStore(counterReducer);
+
+//TODO: 05.Render in the ui
+
+const render =()=>{
+    const state=store.getState();
+    counterElement.innerText=state.value.toString()
+
+}
+
+store.subscribe(render)
+
+
+//TODO: 04.button click listener
+
+// select dom elements
+
+const counterElement =document.getElementById('counter')
+const incrementElement =document.getElementById('increment')
+const decrementElement =document.getElementById('decrement')
+
+incrementElement.addEventListener('click', ()=>{
+    store.dispatch({
+        type:'increment',
+    })
+})
+decrementElement .addEventListener('click', ()=>{
+    store.dispatch({
+        type:'decrement',
+    })
+})
+
+
 ```
