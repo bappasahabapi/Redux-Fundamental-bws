@@ -1,22 +1,37 @@
 `Working with raw js` 
 A. Working with raw redux  we have to 
 
-    00.select dom element
+    01.Reducer function should be pure function.
+    02.Reducer has two things state and action.
+    action is nothing but an obj
 
-    01. initial state
-    
-    02. Action Identifiers:
+```js
 
-    03. Action Identifiers:
+    action{
+        type,
+        payload
+    }
 
-    04.create reducer
+//TODO: 02.create reducer
 
-    05.create store
-
-    06.button click listener
-
-    07.Render in the ui
-    
+function counterReducer(state=initialState, action){
+    if (action.type===INCREMENT) {
+        return{
+            ...state,
+            value:state.value+action.payload
+         }
+    }
+    else if(action.type===DECREMENT){
+        return{
+            ...state,
+            value:state.value-action.payload
+        }
+    } 
+    else{
+        return state;
+    }
+}
+```    
 
 ```js
 //todo: select dom elements
