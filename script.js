@@ -8,6 +8,10 @@ const decrementElement =document.getElementById('decrement')
 
 const initialState ={
     value:0,
+    properties:{
+        a: 45,
+        b: 50
+    },
    
 }
 
@@ -16,6 +20,7 @@ const initialState ={
 
 const INCREMENT ='increment';
 const DECREMENT ='decrement';
+const TEST ='test';
 
 //TODO: Action creators:
 
@@ -52,6 +57,18 @@ function counterReducer(state=initialState, action){
             ...state,
             value:state.value-action.payload
         }
+    else if(action.type===TEST){
+        return{
+            const updatedState ={
+                ...state,
+                properties:{
+                    ...state.properties,
+                    b:state.properties.b+1
+                }
+            }
+
+        }
+        return updatedState
     } 
     else{
         return state;
