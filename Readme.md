@@ -1,9 +1,87 @@
-`Working with raw js`
+`Working with raw redux`: **vanilla-reducer.js**
+
+**📝 NOTE:**
+
+**Reducer:** 
+reducer word is coming from **reducer array**. The reducer array reduce the big array and make the array into new single value array
+
+
+```js
+const array =[1,2,5,6,11,4,55,66,77,100]
+
+console.log(array)
+
+// array.reduce(function,initial_value)
+
+console.log(
+    array.reduce((previousValue,currentValue)=>{
+
+        const result =previousValue+currentValue
+    
+        return result
+    
+    }, 0)
+)
+
+// 📰 result
+[
+  1,  2,  5,  6,  11,
+  4, 55, 66, 77, 100
+]
+327
+
+```
+### 📰 Resucer example
+
+```js
+
+
+const initialState={
+    value:0
+}
+
+
+const actions =[
+    {type:'increment', payload:1},
+    {type:'increment', payload:1},
+    {type:'increment', payload:1},
+    {type:'decrement', payload:1}
+];
+
+const counterReducer =(state,action)=>{
+    if(action.type==='increment'){
+        return{
+            ...state,
+            value:state.value+action.payload
+        }
+    }
+    else if(action.type==='decrement'){
+        return{
+            ...state,
+            value:state.value-action.payload
+        }
+    }
+    else{
+        return state;
+    }
+}
+
+const finalResult =actions.reduce(counterReducer,initialState)
+console.log(finalResult) 
+// --> result should be 2
+```
+
+---
+
+
 A. Working with raw redux we have to
 
-    01.Reducer function should be pure function.
-    02.Reducer has two things state and action.
-    action is nothing but an obj
+01.Reducer function should be pure function.
+
+02.Reducer has two things state and action.
+action is nothing but an obj
+
+---
 
 🚍 Working with nested object
 
@@ -35,7 +113,7 @@ const initialState ={
     }
 
 ```
-
+📰  How reducer works
 ```js
 
     action{
@@ -63,7 +141,7 @@ function counterReducer(state=initialState, action){
     }
 }
 ```
-
+📰 Main script file
 ```js
 //todo: select dom elements
 
