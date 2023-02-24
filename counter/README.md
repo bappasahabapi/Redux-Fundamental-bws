@@ -25,26 +25,7 @@ open terminal at 2.1-react-redux-setup-counter folder and run
 
 🔥  Two part is implemented into the counter component
     which is old way part. new is **useSelector()**
-```js
-// 🔥 old way when class component is used 
-const mapStateToProps =(state)=>{
-  return{
-    count:state.value,
-  }
-
-};
-const mapDispatchToProps =(dispatch)=>{
-  return{
-    increment:(value)=>dispatch(increment(value)),
-    decrement:(value)=>dispatch(decrement(value)),
-  }
-
-};
-export default connect(mapStateToProps,mapDispatchToProps)(Counter)
-
-
-```
-// 🔥 new way useSelector() hook
+    which is old way part. new is **useDispatch()**
 
 ```js
 
