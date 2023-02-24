@@ -1,3 +1,8 @@
+<img align="right" alt="GIF" src="https://c.tenor.com/2uyENRmiUt0AAAAC/coding.gif" width="410" height="200" /></br></br>
+<!-- </br> -->
+
+
+
 `Working with raw redux`: **vanilla-reducer.js**
 
 **📝 NOTE:**
