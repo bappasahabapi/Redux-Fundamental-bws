@@ -3,7 +3,9 @@
 **📝 NOTE:**
 
 **Reducer:** 
-reducer word is coming from **reducer array**. The reducer array reduce the big array and make the array into new single value array
+reducer word is coming from **reducer array**. The reducer array reduce the big array and make the array into new single value array.
+
+That means reducer function reduces the actions and gives the updated result 
 
 
 ```js
